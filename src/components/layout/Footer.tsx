@@ -51,7 +51,7 @@ export function Footer() {
         <div>
           <h4 className="font-display text-lg text-cream mb-4">Shop</h4>
           <ul className="space-y-2.5 text-sm text-cream/70">
-            {["Women", "Men", "Kids", "Accessories", "Sale"].map((c) => (
+            {["Women", "Men", "Sale"].map((c) => (
               <li key={c}>
                 <Link to="/shop" className="hover:text-accent transition-colors">
                   {c}

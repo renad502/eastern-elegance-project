@@ -2,13 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { Search, Heart, ShoppingBag, User, Menu, X, Phone, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useStore } from "@/context/StoreContext";
+import logoEE from "@/assets/logo-ee.png";
 
 const NAV = [
   { label: "Home", to: "/" as const },
   { label: "Shop", to: "/shop" as const },
-  { label: "Collections", to: "/shop" as const, search: { category: "women" } },
-  { label: "New Arrivals", to: "/shop" as const, search: { sort: "new" } },
-  { label: "Sale", to: "/shop" as const, search: { sale: true } },
   { label: "About", to: "/about" as const },
   { label: "Contact", to: "/contact" as const },
 ];
@@ -52,7 +50,7 @@ export function Header() {
       </div>
 
       {/* Main bar */}
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between gap-4">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
         <button
           aria-label="Open menu"
           className="lg:hidden p-2 -ml-2"
@@ -61,13 +59,20 @@ export function Header() {
           <Menu className="h-6 w-6" />
         </button>
 
-        <Link to="/" className="flex flex-col leading-none">
-          <span className="font-logo text-2xl md:text-3xl text-primary tracking-wider">
-            EASTERN
-          </span>
-          <span className="font-logo text-xs md:text-sm text-accent tracking-[0.4em] -mt-1">
-            ELEGANCE
-          </span>
+        <Link to="/" className="flex items-center gap-3 group">
+          <img
+            src={logoEE}
+            alt="Eastern Elegance"
+            className="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+          />
+          <div className="hidden sm:flex flex-col leading-tight">
+            <span className="font-display text-xl md:text-2xl text-primary tracking-wide">
+              Eastern Elegance
+            </span>
+            <span className="font-logo text-[10px] md:text-[11px] text-accent tracking-[0.32em] uppercase mt-0.5">
+              Tradition · Style
+            </span>
+          </div>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8 mx-auto">
@@ -135,7 +140,7 @@ export function Header() {
             <input
               autoFocus
               type="text"
-              placeholder="Search for kurtis, sherwanis, accessories..."
+              placeholder="Search for kurtis, sherwanis..."
               className="flex-1 bg-transparent border-none outline-none placeholder:text-muted-foreground"
             />
             <button onClick={() => setSearchOpen(false)} aria-label="Close search">
@@ -153,9 +158,10 @@ export function Header() {
             className="absolute left-0 top-0 bottom-0 w-80 max-w-[85vw] bg-background p-6 overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between mb-8">
-              <span className="font-logo text-xl text-primary">EASTERN ELEGANCE</span>
-              <button onClick={() => setMobileOpen(false)} aria-label="Close menu">
+            <div className="flex items-center gap-2 mb-8">
+              <img src={logoEE} alt="Eastern Elegance" className="h-10 w-auto" />
+              <span className="font-display text-lg text-primary">Eastern Elegance</span>
+              <button onClick={() => setMobileOpen(false)} aria-label="Close menu" className="ml-auto">
                 <X className="h-6 w-6" />
               </button>
             </div>

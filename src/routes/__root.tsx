@@ -2,6 +2,7 @@ import { Outlet, createRootRoute, HeadContent, Scripts, Link } from "@tanstack/r
 import appCss from "../styles.css?url";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { RouteLoader } from "@/components/layout/RouteLoader";
 import { StoreProvider } from "@/context/StoreContext";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -69,6 +70,7 @@ function RootComponent() {
   return (
     <StoreProvider>
       <div className="flex min-h-screen flex-col">
+        <RouteLoader />
         <Header />
         <main className="flex-1">
           <Outlet />

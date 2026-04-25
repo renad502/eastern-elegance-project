@@ -2,11 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { Search, Heart, ShoppingBag, User, Menu, X, Phone, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useStore } from "@/context/StoreContext";
-import logo from "@/assets/logo.png";
 
 const NAV = [
   { label: "Home", to: "/" as const },
   { label: "Shop", to: "/shop" as const },
+  { label: "Collections", to: "/shop" as const, search: { category: "women" } },
+  { label: "New Arrivals", to: "/shop" as const, search: { sort: "new" } },
   { label: "Sale", to: "/shop" as const, search: { sale: true } },
   { label: "About", to: "/about" as const },
   { label: "Contact", to: "/contact" as const },
@@ -60,14 +61,13 @@ export function Header() {
           <Menu className="h-6 w-6" />
         </button>
 
-        <Link to="/" className="flex items-center" aria-label="Eastern Elegance — Home">
-          <img
-            src={logo}
-            alt="Eastern Elegance"
-            width={1024}
-            height={1024}
-            className="h-12 md:h-16 w-auto object-contain"
-          />
+        <Link to="/" className="flex flex-col leading-none">
+          <span className="font-logo text-2xl md:text-3xl text-primary tracking-wider">
+            EASTERN
+          </span>
+          <span className="font-logo text-xs md:text-sm text-accent tracking-[0.4em] -mt-1">
+            ELEGANCE
+          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8 mx-auto">
@@ -154,7 +154,7 @@ export function Header() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-8">
-              <img src={logo} alt="Eastern Elegance" className="h-12 w-auto object-contain" />
+              <span className="font-logo text-xl text-primary">EASTERN ELEGANCE</span>
               <button onClick={() => setMobileOpen(false)} aria-label="Close menu">
                 <X className="h-6 w-6" />
               </button>

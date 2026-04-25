@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StoreProvider } from "@/context/StoreContext";
 import { Toaster } from "@/components/ui/sonner";
+import { RouteLoader } from "@/components/RouteLoader";
 
 function NotFoundComponent() {
   return (
@@ -69,6 +70,7 @@ function RootComponent() {
   return (
     <StoreProvider>
       <div className="flex min-h-screen flex-col">
+        <RouteLoader />
         <Header />
         <main className="flex-1">
           <Outlet />

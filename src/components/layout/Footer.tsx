@@ -7,12 +7,12 @@ export function Footer() {
     <footer className="bg-ink text-cream/90 mt-24">
       <div className="container mx-auto px-4 py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link to="/" className="flex items-center mb-4" aria-label="Eastern Elegance — Home">
+          <Link to="/" className="inline-flex items-center mb-4 bg-cream rounded-md p-3" aria-label="Eastern Elegance — Home">
             <img
               src={logo}
               alt="Eastern Elegance"
               loading="lazy"
-              className="h-20 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </Link>
           <p className="text-sm text-cream/70 italic mb-4">"Where Tradition Meets Style"</p>

@@ -12,7 +12,7 @@ export function Footer() {
               src={logo}
               alt="Eastern Elegance"
               loading="lazy"
-              className="h-20 w-auto object-contain brightness-0 invert opacity-90"
+              className="h-20 w-auto object-contain"
             />
           </Link>
           <p className="text-sm text-cream/70 italic mb-4">"Where Tradition Meets Style"</p>

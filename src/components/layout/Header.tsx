@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Search, Heart, ShoppingBag, User, Menu, X, Phone, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { Search, Heart, ShoppingBag, User, Menu, X, Phone, Facebook, Instagram } from "lucide-react";
 import { useState } from "react";
 import { useStore } from "@/context/StoreContext";
 import logoEE from "@/assets/logo-ee.png";
@@ -23,7 +23,7 @@ export function Header() {
         <div className="container mx-auto flex items-center justify-between py-2 px-4">
           <div className="hidden md:flex items-center gap-6">
             <span className="text-accent">✦</span>
-            <span>Free Shipping on Orders Over Rs. 5,000</span>
+            <span className="tracking-wide">Free Shipping on Orders Over Rs. 5,000</span>
             <span className="opacity-40">|</span>
             <span className="flex items-center gap-1.5">
               <Phone className="h-3 w-3" /> 0300-1234567
@@ -41,16 +41,13 @@ export function Header() {
               <a href="#" aria-label="Instagram" className="hover:text-accent transition-colors">
                 <Instagram className="h-3.5 w-3.5" />
               </a>
-              <a href="#" aria-label="WhatsApp" className="hover:text-accent transition-colors">
-                <MessageCircle className="h-3.5 w-3.5" />
-              </a>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main bar */}
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between gap-6">
         <button
           aria-label="Open menu"
           className="lg:hidden p-2 -ml-2"
@@ -59,38 +56,40 @@ export function Header() {
           <Menu className="h-6 w-6" />
         </button>
 
-        <Link to="/" className="flex items-center gap-3 group">
-          <img
-            src={logoEE}
-            alt="Eastern Elegance"
-            className="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105"
-          />
-          <div className="hidden sm:flex flex-col leading-tight">
-            <span className="font-display text-xl md:text-2xl text-primary tracking-wide">
+        <Link to="/" className="flex items-center gap-3 group shrink-0">
+          <span className="relative inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-gradient-gold/10 ring-1 ring-accent/30 transition-all group-hover:ring-accent/60">
+            <img
+              src={logoEE}
+              alt="Eastern Elegance"
+              className="h-9 md:h-11 w-auto object-contain"
+            />
+          </span>
+          <div className="hidden sm:flex flex-col leading-none">
+            <span className="font-display text-[22px] md:text-[26px] text-primary tracking-[0.01em] font-semibold">
               Eastern Elegance
             </span>
-            <span className="font-logo text-[10px] md:text-[11px] text-accent tracking-[0.32em] uppercase mt-0.5">
+            <span className="font-logo text-[10px] md:text-[11px] text-accent tracking-[0.36em] uppercase mt-1.5">
               Tradition · Style
             </span>
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8 mx-auto">
+        <nav className="hidden lg:flex items-center gap-12 xl:gap-16 mx-auto">
           {NAV.map((n) => (
             <Link
               key={n.label}
               to={n.to}
-              className="text-sm font-medium tracking-wide hover:text-primary transition-colors relative group"
+              className="text-[13px] font-semibold tracking-[0.18em] uppercase hover:text-primary transition-colors relative group py-1"
               activeProps={{ className: "text-primary" }}
               activeOptions={{ exact: n.to === "/" }}
             >
               {n.label}
-              <span className="absolute -bottom-1 left-0 right-0 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+              <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 shrink-0">
           <button
             aria-label="Search"
             className="p-2 hover:text-primary transition-colors"
@@ -158,9 +157,11 @@ export function Header() {
             className="absolute left-0 top-0 bottom-0 w-80 max-w-[85vw] bg-background p-6 overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center gap-2 mb-8">
-              <img src={logoEE} alt="Eastern Elegance" className="h-10 w-auto" />
-              <span className="font-display text-lg text-primary">Eastern Elegance</span>
+            <div className="flex items-center gap-3 mb-8">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-gradient-gold/10 ring-1 ring-accent/30">
+                <img src={logoEE} alt="Eastern Elegance" className="h-8 w-auto" />
+              </span>
+              <span className="font-display text-lg text-primary font-semibold">Eastern Elegance</span>
               <button onClick={() => setMobileOpen(false)} aria-label="Close menu" className="ml-auto">
                 <X className="h-6 w-6" />
               </button>
@@ -170,7 +171,7 @@ export function Header() {
                 <Link
                   key={n.label}
                   to={n.to}
-                  className="py-3 px-2 text-base font-medium border-b border-border/50 hover:text-primary"
+                  className="py-3 px-2 text-base font-semibold tracking-wider uppercase border-b border-border/50 hover:text-primary"
                   onClick={() => setMobileOpen(false)}
                 >
                   {n.label}
@@ -178,7 +179,7 @@ export function Header() {
               ))}
               <Link
                 to="/account"
-                className="py-3 px-2 text-base font-medium border-b border-border/50"
+                className="py-3 px-2 text-base font-semibold tracking-wider uppercase border-b border-border/50"
                 onClick={() => setMobileOpen(false)}
               >
                 My Account

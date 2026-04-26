@@ -7,7 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { PRODUCTS, type Product } from "@/data/products";
+import { getAllProducts, type Product } from "@/data/products";
 
 export interface CartItem {
   productId: string;
@@ -117,7 +117,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     () =>
       cart
         .map((item) => {
-          const product = PRODUCTS.find((p) => p.id === item.productId);
+          const product = getAllProducts().find((p) => p.id === item.productId);
           if (!product) return null;
           return { item, product, lineTotal: product.price * item.quantity };
         })

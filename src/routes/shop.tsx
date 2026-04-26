@@ -27,7 +27,7 @@ export const Route = createFileRoute("/shop")({
       {
         name: "description",
         content:
-          "Browse our full collection of premium eastern wear: kurtis, sherwanis, lehengas, accessories and more.",
+          "Browse our full collection of premium eastern wear: kurtis, sherwanis, lehengas and more.",
       },
       { property: "og:title", content: "Shop — Eastern Elegance" },
       { property: "og:description", content: "Premium eastern fashion for every occasion." },

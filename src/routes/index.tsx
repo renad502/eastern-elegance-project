@@ -5,7 +5,7 @@ import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import promoEid from "@/assets/promo-eid.jpg";
-import { CATEGORIES, PRODUCTS } from "@/data/products";
+import { CATEGORIES, getAllProducts } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 
 export const Route = createFileRoute("/")({
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Discover hand-embroidered kurtis, sherwanis, lehengas and accessories at Eastern Elegance — luxury eastern fashion for every occasion.",
+          "Discover hand-embroidered kurtis, sherwanis and lehengas at Eastern Elegance — luxury eastern fashion for every occasion.",
       },
       { property: "og:title", content: "Eastern Elegance — Where Tradition Meets Style" },
       {
@@ -151,13 +151,13 @@ function CategoriesGrid() {
   return (
     <section className="container mx-auto px-4 py-20">
       <SectionHeading eyebrow="Curated for you" title="Shop by Category" />
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {CATEGORIES.map((c) => (
           <Link
             key={c.id}
             to="/shop"
             search={{ category: c.id }}
-            className="group relative aspect-[3/4] overflow-hidden rounded-md bg-muted block"
+            className="group relative aspect-[4/5] md:aspect-[3/4] overflow-hidden rounded-md bg-muted block"
           >
             <img
               src={c.image}
@@ -166,9 +166,9 @@ function CategoriesGrid() {
               className="absolute inset-0 h-full w-full object-cover img-zoom"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-5 text-cream">
+            <div className="absolute inset-x-0 bottom-0 p-6 text-cream">
               <p className="font-logo text-[10px] text-accent tracking-[0.3em] mb-1">{c.tagline}</p>
-              <h3 className="font-display text-xl mb-2">{c.name}</h3>
+              <h3 className="font-display text-2xl mb-2">{c.name}</h3>
               <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider border-b border-accent pb-0.5 group-hover:gap-3 transition-all">
                 View All <ArrowRight className="h-3 w-3" />
               </span>
@@ -181,7 +181,7 @@ function CategoriesGrid() {
 }
 
 function TrendingSection() {
-  const trending = PRODUCTS.slice(0, 8);
+  const trending = getAllProducts().slice(0, 8);
   return (
     <section className="container mx-auto px-4 py-20">
       <SectionHeading eyebrow="Loved this week" title="Trending Now" />
@@ -260,7 +260,7 @@ function PromoBanner() {
 }
 
 function BestSellers() {
-  const items = [...PRODUCTS].sort((a, b) => b.reviewCount - a.reviewCount).slice(0, 6);
+  const items = [...getAllProducts()].sort((a, b) => b.reviewCount - a.reviewCount).slice(0, 6);
   const [start, setStart] = useState(0);
   const visible = 3;
   const max = items.length - visible;

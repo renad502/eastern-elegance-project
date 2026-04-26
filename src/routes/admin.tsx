@@ -63,7 +63,7 @@ function AdminShell() {
       <aside className="hidden md:flex w-64 bg-ink text-cream flex-col">
         <div className="px-6 py-6 border-b border-cream/10 flex items-center gap-3">
           <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-cream/5 ring-1 ring-accent/40">
-            <img src={logoEE} alt="EE" className="h-7 w-auto brightness-125" />
+            <img src={logoEE} alt="EE" className="h-7 w-auto" />
           </span>
           <div className="leading-tight">
             <p className="font-display text-base text-cream font-semibold">Eastern Elegance</p>
@@ -108,7 +108,7 @@ function AdminShell() {
       {/* Mobile top bar */}
       <div className="md:hidden fixed top-0 inset-x-0 z-40 bg-ink text-cream px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img src={logoEE} alt="EE" className="h-7 w-auto brightness-125" />
+          <img src={logoEE} alt="EE" className="h-7 w-auto" />
           <span className="font-display text-sm font-semibold">EE Admin</span>
         </div>
         <button

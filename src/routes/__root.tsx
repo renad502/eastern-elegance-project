@@ -35,7 +35,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Premium eastern wear and modern fusion clothing. Discover luxury kurtis, sherwanis, lehengas and accessories — crafted with care in Pakistan.",
+          "Premium eastern wear and modern fusion clothing. Discover luxury kurtis, sherwanis and lehengas — crafted with care in Pakistan.",
       },
       { property: "og:title", content: "Eastern Elegance — Where Tradition Meets Style" },
       {

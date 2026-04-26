@@ -1,23 +1,33 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, MessageCircle, MapPin, Phone, Mail, Send } from "lucide-react";
+import { Facebook, Instagram, MapPin, Phone, Mail, Send } from "lucide-react";
 import logoEE from "@/assets/logo-ee.png";
 
 export function Footer() {
   return (
     <footer className="bg-ink text-cream/90 mt-24">
-      <div className="container mx-auto px-4 py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container mx-auto px-4 py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link to="/" className="flex items-center gap-3 mb-4 group">
-            <img src={logoEE} alt="Eastern Elegance" className="h-12 w-auto brightness-110" />
-            <span className="font-display text-xl text-cream tracking-wide">Eastern Elegance</span>
+          <Link to="/" className="inline-flex items-center gap-3 mb-5 group">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-cream/5 ring-1 ring-accent/40 transition-all group-hover:ring-accent">
+              <img
+                src={logoEE}
+                alt="Eastern Elegance"
+                className="h-9 w-auto object-contain brightness-125 contrast-110"
+              />
+            </span>
+            <span className="font-display text-[22px] text-cream tracking-wide font-semibold">
+              Eastern Elegance
+            </span>
           </Link>
-          <p className="text-sm text-cream/70 italic mb-4">"Where Tradition Meets Style"</p>
-          <p className="text-sm text-cream/60 leading-relaxed mb-5">
-            Crafted with care in Pakistan. We design heirloom-quality eastern wear and modern fusion
-            pieces for the moments that matter.
+          <p className="text-sm text-accent/90 italic mb-4 font-display">
+            "Where Tradition Meets Style"
+          </p>
+          <p className="text-sm text-cream/65 leading-relaxed mb-6">
+            Crafted with care in Pakistan. We design heirloom-quality eastern wear and modern
+            fusion pieces for the moments that matter.
           </p>
           <div className="flex gap-3">
-            {[Facebook, Instagram, MessageCircle].map((Icon, i) => (
+            {[Facebook, Instagram].map((Icon, i) => (
               <a
                 key={i}
                 href="#"
@@ -30,8 +40,8 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-display text-lg text-cream mb-4">Quick Links</h4>
-          <ul className="space-y-2.5 text-sm text-cream/70">
+          <h4 className="font-display text-lg text-cream mb-5 tracking-wide">Quick Links</h4>
+          <ul className="space-y-3 text-sm text-cream/70">
             {[
               { label: "About Us", to: "/about" },
               { label: "Contact", to: "/contact" },
@@ -49,8 +59,8 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-display text-lg text-cream mb-4">Shop</h4>
-          <ul className="space-y-2.5 text-sm text-cream/70">
+          <h4 className="font-display text-lg text-cream mb-5 tracking-wide">Shop</h4>
+          <ul className="space-y-3 text-sm text-cream/70">
             {["Women", "Men", "Sale"].map((c) => (
               <li key={c}>
                 <Link to="/shop" className="hover:text-accent transition-colors">
@@ -62,8 +72,8 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-display text-lg text-cream mb-4">Stay in Touch</h4>
-          <ul className="space-y-3 text-sm text-cream/70 mb-5">
+          <h4 className="font-display text-lg text-cream mb-5 tracking-wide">Stay in Touch</h4>
+          <ul className="space-y-3.5 text-sm text-cream/70 mb-6">
             <li className="flex gap-2.5">
               <MapPin className="h-4 w-4 mt-0.5 text-accent shrink-0" />
               <span>Liberty Market, Gulberg III, Lahore, Pakistan</span>
@@ -103,6 +113,7 @@ export function Footer() {
           <div className="flex gap-5">
             <a href="#" className="hover:text-accent">Privacy Policy</a>
             <a href="#" className="hover:text-accent">Terms & Conditions</a>
+            <Link to="/admin" className="hover:text-accent">Admin</Link>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   Share2,
   Facebook,
-  MessageCircle,
+  Instagram,
   Copy,
 } from "lucide-react";
 import { getProductBySlug, getRelatedProducts } from "@/data/products";
@@ -240,7 +240,7 @@ function ProductPage() {
           <div className="flex items-center gap-3 mt-6 pt-6 border-t border-border">
             <Share2 className="h-4 w-4 text-muted-foreground" />
             <span className="text-sm text-muted-foreground">Share:</span>
-            {[Facebook, MessageCircle, Copy].map((Icon, i) => (
+            {[Facebook, Instagram, Copy].map((Icon, i) => (
               <button
                 key={i}
                 className="h-9 w-9 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"

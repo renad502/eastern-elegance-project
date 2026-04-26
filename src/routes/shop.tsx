@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { ChevronDown, SlidersHorizontal, X, Grid3x3, List } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import {
-  PRODUCTS,
+  getAllProducts,
   CATEGORIES,
   ALL_SIZES,
   ALL_COLORS,
@@ -14,7 +14,7 @@ import {
 import { z } from "zod";
 
 const searchSchema = z.object({
-  category: z.enum(["women", "men", "kids", "accessories"]).optional(),
+  category: z.enum(["women", "men"]).optional(),
   sale: z.boolean().optional(),
   sort: z.string().optional(),
 });
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/shop")({
       {
         name: "description",
         content:
-          "Browse our full collection of premium eastern wear: kurtis, sherwanis, lehengas, accessories and more.",
+          "Browse our full collection of premium eastern wear: kurtis, sherwanis, lehengas and more.",
       },
       { property: "og:title", content: "Shop — Eastern Elegance" },
       { property: "og:description", content: "Premium eastern fashion for every occasion." },
@@ -55,7 +55,7 @@ function ShopPage() {
   const perPage = 12;
 
   const filtered = useMemo(() => {
-    let list = PRODUCTS.filter((p) => {
+    let list = getAllProducts().filter((p) => {
       if (selectedCategory !== "all" && p.category !== selectedCategory) return false;
       if (selectedSubs.length > 0 && !selectedSubs.includes(p.subCategory)) return false;
       if (p.price < priceRange[0] || p.price > priceRange[1]) return false;

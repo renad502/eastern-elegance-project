@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, MapPin, Phone, Mail, Send } from "lucide-react";
-import logoEE from "@/assets/logo-ee.png";
+import logoEE from "@/assets/logo-ee-light.png";
 
 export function Footer() {
   return (
@@ -8,11 +8,11 @@ export function Footer() {
       <div className="container mx-auto px-4 py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" className="inline-flex items-center gap-3 mb-5 group">
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-cream/5 ring-1 ring-accent/40 transition-all group-hover:ring-accent">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-cream/10 ring-1 ring-accent/50 transition-all group-hover:ring-accent">
               <img
                 src={logoEE}
                 alt="Eastern Elegance"
-                className="h-9 w-auto object-contain brightness-125 contrast-110"
+                className="h-8 w-auto object-contain"
               />
             </span>
             <span className="font-display text-[22px] text-cream tracking-wide font-semibold">

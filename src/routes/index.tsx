@@ -63,8 +63,32 @@ function HomePage() {
       <BestSellers />
       <WhyUs />
       <Reviews />
-      <Newsletter />
+      <BrandStatement />
     </>
+  );
+}
+
+function BrandStatement() {
+  return (
+    <section className="relative overflow-hidden bg-gradient-brand text-cream py-20">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_20%_20%,_var(--color-accent)_0,_transparent_40%),radial-gradient(circle_at_80%_80%,_var(--color-accent)_0,_transparent_40%)]"
+      />
+      <div className="container mx-auto px-4 relative text-center max-w-3xl">
+        <p className="font-logo text-xs text-accent tracking-[0.4em] mb-4">
+          The Eastern Elegance Promise
+        </p>
+        <h2 className="font-display text-4xl md:text-5xl mb-5 leading-tight">
+          Redefining Eastern Fashion
+        </h2>
+        <div className="ornament-divider mb-6"><span className="text-base">✦</span></div>
+        <p className="text-cream/80 text-base md:text-lg leading-relaxed italic font-display">
+          Discover a blend of tradition and modern elegance. At Eastern Elegance,
+          every piece is crafted to make you stand out with confidence and grace.
+        </p>
+      </div>
+    </section>
   );
 }
 
@@ -397,34 +421,3 @@ function Reviews() {
   );
 }
 
-function Newsletter() {
-  return (
-    <section className="bg-gradient-brand text-cream py-16">
-      <div className="container mx-auto px-4 text-center max-w-2xl">
-        <p className="font-logo text-xs text-accent tracking-[0.4em] mb-3">Join the List</p>
-        <h2 className="font-display text-3xl md:text-4xl mb-3">Stay Updated with Latest Trends</h2>
-        <p className="text-cream/75 mb-8">
-          Subscribe for exclusive offers, early access to new arrivals and styling inspiration.
-        </p>
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
-        >
-          <input
-            type="email"
-            required
-            placeholder="Your email address"
-            className="flex-1 bg-cream/10 backdrop-blur border border-cream/30 rounded-sm px-5 py-3.5 placeholder:text-cream/60 outline-none focus:border-accent focus:bg-cream/15"
-          />
-          <button
-            type="submit"
-            className="bg-accent text-accent-foreground px-7 py-3.5 text-sm font-bold uppercase tracking-[0.2em] rounded-sm hover:bg-cream transition-colors"
-          >
-            Subscribe
-          </button>
-        </form>
-        <p className="text-xs text-cream/50 mt-4">We respect your privacy.</p>
-      </div>
-    </section>
-  );
-}

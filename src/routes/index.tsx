@@ -63,8 +63,32 @@ function HomePage() {
       <BestSellers />
       <WhyUs />
       <Reviews />
-      <Newsletter />
+      <BrandStatement />
     </>
+  );
+}
+
+function BrandStatement() {
+  return (
+    <section className="relative overflow-hidden bg-gradient-brand text-cream py-20">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_20%_20%,_var(--color-accent)_0,_transparent_40%),radial-gradient(circle_at_80%_80%,_var(--color-accent)_0,_transparent_40%)]"
+      />
+      <div className="container mx-auto px-4 relative text-center max-w-3xl">
+        <p className="font-logo text-xs text-accent tracking-[0.4em] mb-4">
+          The Eastern Elegance Promise
+        </p>
+        <h2 className="font-display text-4xl md:text-5xl mb-5 leading-tight">
+          Redefining Eastern Fashion
+        </h2>
+        <div className="ornament-divider mb-6"><span className="text-base">✦</span></div>
+        <p className="text-cream/80 text-base md:text-lg leading-relaxed italic font-display">
+          Discover a blend of tradition and modern elegance. At Eastern Elegance,
+          every piece is crafted to make you stand out with confidence and grace.
+        </p>
+      </div>
+    </section>
   );
 }
 

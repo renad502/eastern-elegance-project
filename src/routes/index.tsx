@@ -112,14 +112,14 @@ function HeroSlider() {
             alt={s.title}
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/40 to-transparent" />
-          <div className="container mx-auto px-4 relative h-full flex items-center">
-            <div className="max-w-xl text-cream animate-fade-up" key={`${i}-${idx}`}>
+          <div className={`absolute inset-0 ${s.align === "right" ? "bg-gradient-to-l from-ink/85 via-ink/40 to-transparent" : "bg-gradient-to-r from-ink/85 via-ink/40 to-transparent"}`} />
+          <div className={`container mx-auto px-4 relative h-full flex items-center ${s.align === "right" ? "justify-end" : ""}`}>
+            <div className={`max-w-xl text-cream animate-fade-up ${s.align === "right" ? "text-right" : ""}`} key={`${i}-${idx}`}>
               <p className="font-logo text-sm text-accent tracking-[0.4em] mb-4">{s.eyebrow}</p>
               <h1 className="font-display text-5xl md:text-7xl leading-[1.05] mb-5">
                 {s.title}
               </h1>
-              <p className="text-lg text-cream/80 mb-8 max-w-md">{s.sub}</p>
+              <p className={`text-lg text-cream/80 mb-8 max-w-md ${s.align === "right" ? "ml-auto" : ""}`}>{s.sub}</p>
               <Link
                 to="/shop"
                 className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-8 py-4 text-sm font-bold uppercase tracking-[0.2em] rounded-sm hover:bg-cream transition-colors shadow-gold"

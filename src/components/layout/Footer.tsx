@@ -8,13 +8,11 @@ export function Footer() {
       <div className="container mx-auto px-4 py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" className="inline-flex items-center gap-3 mb-5 group">
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-cream/10 ring-1 ring-accent/50 transition-all group-hover:ring-accent">
-              <img
-                src={logoEE}
-                alt="Eastern Elegance"
-                className="h-8 w-auto object-contain"
-              />
-            </span>
+            <img
+              src={logoEE}
+              alt="Eastern Elegance"
+              className="h-12 w-auto object-contain transition-opacity group-hover:opacity-90"
+            />
             <span className="font-display text-[22px] text-cream tracking-wide font-semibold">
               Eastern Elegance
             </span>

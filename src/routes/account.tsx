@@ -93,19 +93,6 @@ function AccountPage() {
           </button>
         </form>
 
-        <div className="flex items-center gap-3 my-5 text-xs text-muted-foreground">
-          <div className="flex-1 h-px bg-border" /> OR <div className="flex-1 h-px bg-border" />
-        </div>
-
-        <div className="space-y-2">
-          <button className="w-full border border-border py-3 rounded-sm text-sm font-semibold hover:bg-background transition-colors">
-            Continue with Google
-          </button>
-          <button className="w-full border border-border py-3 rounded-sm text-sm font-semibold hover:bg-background transition-colors">
-            Continue with Facebook
-          </button>
-        </div>
-
         <p className="text-center text-sm text-muted-foreground mt-6">
           {mode === "login" ? "Don't have an account? " : "Already have an account? "}
           <button

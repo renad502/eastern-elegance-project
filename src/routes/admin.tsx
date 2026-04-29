@@ -10,7 +10,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { AdminProvider, useAdmin } from "@/context/AdminContext";
-import logoEE from "@/assets/logo-ee-light.png";
+
 
 export const Route = createFileRoute("/admin")({
   head: () => ({

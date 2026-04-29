@@ -18,34 +18,6 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/60">
-      {/* Top bar */}
-      <div className="bg-ink text-cream text-xs">
-        <div className="container mx-auto flex items-center justify-between py-2 px-4">
-          <div className="hidden md:flex items-center gap-6">
-            <span className="text-accent">✦</span>
-            <span className="tracking-wide">Free Shipping on Orders Over Rs. 5,000</span>
-            <span className="opacity-40">|</span>
-            <span className="flex items-center gap-1.5">
-              <Phone className="h-3 w-3" /> 0300-1234567
-            </span>
-          </div>
-          <div className="flex items-center gap-4 ml-auto">
-            <span className="opacity-80">EN | UR</span>
-            <span className="opacity-40">|</span>
-            <span className="opacity-80">PKR</span>
-            <span className="opacity-40 hidden md:inline">|</span>
-            <div className="hidden md:flex items-center gap-3">
-              <a href="#" aria-label="Facebook" className="hover:text-accent transition-colors">
-                <Facebook className="h-3.5 w-3.5" />
-              </a>
-              <a href="#" aria-label="Instagram" className="hover:text-accent transition-colors">
-                <Instagram className="h-3.5 w-3.5" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main bar */}
       <div className="container mx-auto px-4 py-4 flex items-center justify-between gap-6">
         <button

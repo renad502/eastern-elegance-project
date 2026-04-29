@@ -105,9 +105,9 @@ function AdminShell() {
 
       {/* Mobile top bar */}
       <div className="md:hidden fixed top-0 inset-x-0 z-40 bg-ink text-cream px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img src={logoEE} alt="EE" className="h-7 w-auto" />
-          <span className="font-display text-sm font-semibold">EE Admin</span>
+        <div className="flex items-baseline gap-2">
+          <span className="font-display text-xl text-accent leading-none">EE</span>
+          <span className="font-display text-sm font-semibold">Admin</span>
         </div>
         <button
           onClick={logout}

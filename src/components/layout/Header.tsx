@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Search, Heart, ShoppingBag, User, Menu, X, Phone, Facebook, Instagram } from "lucide-react";
+import { Search, Heart, ShoppingBag, User, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useStore } from "@/context/StoreContext";
 import logoEE from "@/assets/logo-ee.png";

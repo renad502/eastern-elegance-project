@@ -36,6 +36,7 @@ const SLIDES = [
     title: "Bridal Wear & Sherwanis",
     sub: "Hand-embroidered bridal lehengas and regal sherwanis crafted for your most cherished moments.",
     cta: "Shop Bridal",
+    align: "right" as const,
   },
   {
     image: hero2,

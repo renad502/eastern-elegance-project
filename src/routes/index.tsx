@@ -32,10 +32,10 @@ export const Route = createFileRoute("/")({
 const SLIDES = [
   {
     image: hero1,
-    eyebrow: "Spring 2026",
-    title: "New Spring Collection",
-    sub: "Discover heirloom craftsmanship with a contemporary soul.",
-    cta: "Shop Now",
+    eyebrow: "Bridal Couture",
+    title: "Bridal Wear & Sherwanis",
+    sub: "Hand-embroidered bridal lehengas and regal sherwanis crafted for your most cherished moments.",
+    cta: "Shop Bridal",
   },
   {
     image: hero2,

@@ -204,12 +204,12 @@ function CartPage() {
             <span className="font-display text-lg">Total</span>
             <span className="font-display text-2xl text-primary font-bold">{formatPKR(total)}</span>
           </div>
-          <button
-            onClick={() => toast.success("Checkout coming soon — connect Lovable Cloud to enable orders")}
-            className="w-full bg-primary text-primary-foreground py-4 text-sm font-bold uppercase tracking-[0.2em] rounded-sm hover:bg-ink transition-colors"
+          <Link
+            to="/checkout"
+            className="block w-full text-center bg-primary text-primary-foreground py-4 text-sm font-bold uppercase tracking-[0.2em] rounded-sm hover:bg-ink transition-colors"
           >
             Proceed to Checkout
-          </button>
+          </Link>
           <Link
             to="/shop"
             className="block text-center text-xs text-muted-foreground mt-3 hover:text-primary"

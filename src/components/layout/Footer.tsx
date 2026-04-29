@@ -1,18 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, MapPin, Phone, Mail, Send } from "lucide-react";
-import logoEE from "@/assets/logo-ee-light.png";
 
 export function Footer() {
   return (
     <footer className="bg-ink text-cream/90 mt-24">
       <div className="container mx-auto px-4 py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link to="/" className="inline-flex items-center gap-3 mb-5 group">
-            <img
-              src={logoEE}
-              alt="Eastern Elegance"
-              className="h-12 w-auto object-contain transition-opacity group-hover:opacity-90"
-            />
+          <Link to="/" className="inline-flex items-baseline gap-2 mb-5 group">
+            <span className="font-display text-3xl text-accent leading-none">EE</span>
             <span className="font-display text-[22px] text-cream tracking-wide font-semibold">
               Eastern Elegance
             </span>
